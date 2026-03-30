@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Purity Muriithi - Get in touch for work and collaborations.">
+    <title>Purity Muriithi | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+       <div class="container nav-container">
+            <h1 class="logo">Purity Muriithi</h1>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <button id="mobile-menu-button" class="menu-btn" aria-label="Toggle navigation">
+                ☰
+            </button>
+        
+        </div>
+
+        <!-- ✅ ADD MOBILE MENU HERE -->
+        <ul id="mobile-menu" class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+       
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Let's discuss your next project</p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-container">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="card form-card">
+                <h3>Send Me a Message</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">Send Message</button>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </div>
+
+            <!-- Contact Info & Socials -->
+            <div class="contact-info">
+                <div class="card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <p>muriithipurity28@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <p>+254 797 113 973</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>Nairobi, Kenya</p>
+                    </div>
+                </div>
+
+                <div class="card socials-card">
+                    <h3>Follow Me</h3>
+                    <div class="socials">
+                        <a href="#" title="GitHub">G</a>
+                        <a href="#" title="LinkedIn">L</a>
+                        <a href="#" title="Twitter">T</a>
+                    </div>
+                </div>
+
+                <div class="card availability-card">
+                    <h3>Available for Freelance</h3>
+                    <p>I'm currently available for freelance work and new projects!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 Purity Muriithi
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+            formMessage.classList.add('visible');
+            contactForm.reset();
+            setTimeout(() => {
+                formMessage.classList.remove('visible');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
